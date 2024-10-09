@@ -66,8 +66,8 @@ const Login = () => {
 							<input
 								className="w-60   px-5 py-3 rounded-lg mt-6 mb-1 shadow-3xl shadow-blue-200 focus focus:outline-offset-[3px] outline-blue-300 "
 								type="text"
-								id="name"
-								name="name"
+								id="username"
+								name="username"
 								placeholder="username"
                                 {...register("username", { required: {value: true, message: "This field is required"}, minLength: {value: 3, message: "Minimum length is 3"}, maxLength: {value: 8, message: "Maximum length is 8"}, })}
                                 autoComplete="current-password"

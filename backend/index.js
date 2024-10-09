@@ -29,6 +29,7 @@ app.post("/Signup", async (req, res) => {
 });
 
 app.post("/login", async (req, res) => {
+	console.log("Login Request Body:", req.body);
 	const { username, password } = req.body;
 	const foundUser = await user.findOne({ username });
     console.log("Logged in");
