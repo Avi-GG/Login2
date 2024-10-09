@@ -30,13 +30,7 @@ const Navbar = () => {
 		
 		checktoken();
 
-		const intervalid = setInterval(() => {
-			checktoken();
-		}, 1000);
-
-		return () => {
-            clearInterval(intervalid);
-        };
+		
 	}, []);
 
 	const handleLogout = async () => {
