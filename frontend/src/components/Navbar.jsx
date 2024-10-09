@@ -13,10 +13,11 @@ const Navbar = () => {
 	useEffect(() => {
 		// Check if token exists in cookies
 		const token = Cookies.get("token");
+		console.log(token);
 		if (token) {
 			setIsAuthenticated(true);
 			setButtonText("Logout");
-			console.log(token);
+			
 			
 			// Decode the token to get the username
 			const decoded = jwtDecode(token);
