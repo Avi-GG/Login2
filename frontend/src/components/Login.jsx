@@ -16,7 +16,7 @@ const Login = () => {
     
           // Send data to the backend
           try {
-              const response = await fetch("http://localhost:5001/login", {
+              const response = await fetch("https://login2-backend.onrender.com/login", {
                   method: 'POST', // Use POST for sending data
                   headers: {
                       'Content-Type': 'application/json', // Specify content type

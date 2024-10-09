@@ -22,14 +22,17 @@ const Signup = () => {
 		// Send data to the backend
 		try {
 			// console.log(process.env.REACT_APP_API_URL);
-            console.log(data);
-			const response = await fetch("http://localhost:5001/Signup", {
-				method: "POST", // Use POST for sending data
-				headers: {
-					"Content-Type": "application/json", // Specify content type
-				},
-				body: JSON.stringify(data), // Convert data to JSON
-			});
+			console.log(data);
+			const response = await fetch(
+				"https://login2-backend.onrender.com/Signup",
+				{
+					method: "POST", // Use POST for sending data
+					headers: {
+						"Content-Type": "application/json", // Specify content type
+					},
+					body: JSON.stringify(data), // Convert data to JSON
+				}
+			);
 			console.log(response);
 
 			const result = await response.json(); // Get the response from the server
