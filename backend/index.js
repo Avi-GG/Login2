@@ -43,7 +43,7 @@ app.post("/login", async (req, res) => {
 	res.cookie("token", token, {
         httpOnly: true, // Temporarily set to false for testing
         secure: true, // Temporarily set to false for testing
-        sameSite: "Lax", // You can set it to Lax for testing
+        sameSite: "None", // You can set it to Lax for testing
         expires: new Date(Date.now() + 900000), // Example: expires in 15 minutes
     });
     console.log(token);
