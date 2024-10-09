@@ -15,10 +15,10 @@ app.use(
 );
 app.use(express.json());
 app.use(cookieParser());
-
+app.use(express.static(path.join(__dirname, "dist")));
 
 app.get("*", (req, res) => {
-	res.sendFile(__dirname + "/build/index.html");
+	res.sendFile(__dirname + "/dist/index.html");
 })
 
 app.post("/Signup", async (req, res) => {
