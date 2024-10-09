@@ -48,17 +48,17 @@ app.post("/login", async (req, res) => {
 	}
 	const token = jwt.sign({ username: foundUser.username }, "secretKey");
 
-	res.cookie("token", token, {
-        path: "/", // Allow access from any path
-    	// domain: "login2-flax.vercel.app", // Replace with your actual domain 
-        secure: true, // Temporarily set to false for testing
-        sameSite: "None", // You can set it to Lax for testing
-		expires: new Date(Date.now() + 3600000), // Example: expires in 15 minutes (900000 milliseconds)
-    });
+	// res.cookie("token", token, {
+    //     path: "/", // Allow access from any path
+    // 	// domain: "login2-flax.vercel.app", // Replace with your actual domain 
+    //     secure: true, // Temporarily set to false for testing
+    //     sameSite: "None", // You can set it to Lax for testing
+	// 	expires: new Date(Date.now() + 3600000), // Example: expires in 15 minutes (900000 milliseconds)
+    // });
     console.log(token);
     
 
-	res.json({ message: "Logged in successfully" });
+	res.json({token, message: "Logged in successfully" });
 });
 
 app.post("/logout", async (req, res) => {

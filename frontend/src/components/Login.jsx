@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import Cookies from 'js-cookie'
 
 const Login = () => {
     const [username, setUsername] = useState('');
@@ -37,7 +38,7 @@ const Login = () => {
                 }
             }
             else{
-                 // Redirect to home page after successful signup
+                Cookies.set('token', result.token); // Redirect to home page after successful signup
                 navigate('/');  // Redirect to '/' after success
             }
           } catch (error) {
