@@ -11,21 +11,25 @@ const Navbar = () => {
 	const navigate = useNavigate();
 
 	useEffect(() => {
-		// Check if token exists in cookies
-		const token = Cookies.get("token");
-		console.log(token);
-		if (token) {
-			setIsAuthenticated(true);
-			setButtonText("Logout");
-			
-			
-			// Decode the token to get the username
-			const decoded = jwtDecode(token);
-			console.log(decoded);
-			
-			setUsername(decoded.username); // Set the username from the token because it will rerender the component to make it visible
-		}
-	});
+		const checktoken = () => {
+				// Check if token exists in cookies
+			const token = Cookies.get("token");
+			console.log(token);
+			if (token) {
+				setIsAuthenticated(true);
+				setButtonText("Logout");
+				
+				
+				// Decode the token to get the username
+				const decoded = jwtDecode(token);
+				console.log(decoded);
+				
+				setUsername(decoded.username); // Set the username from the token because it will rerender the component to make it visible
+			}
+		};
+		
+		checktoken();
+	}, []);
 
 	const handleLogout = async () => {
 		try {
