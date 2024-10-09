@@ -9,7 +9,7 @@ const cookieParser = require("cookie-parser");
 const app = express();
 app.use(
 	cors({
-		origin: "https://login2-flax.vercel.app/", // Use the environment variable
+		origin: "https://login2-flax.vercel.app", // Use the environment variable
 		credentials: true, // Allow credentials (cookies, authorization headers, etc.)
 	})
 );
