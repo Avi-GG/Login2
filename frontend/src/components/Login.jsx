@@ -24,6 +24,7 @@ const Login = () => {
                   credentials: 'include',
                   body: JSON.stringify(data), // Convert data to JSON
               });
+              console.log(response);
     
               const result = await response.json(); // Get the response from the server
             //   console.log(result); // Handle the response as needed

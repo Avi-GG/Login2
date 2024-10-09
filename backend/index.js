@@ -46,6 +46,8 @@ app.post("/login", async (req, res) => {
         sameSite: "Lax", // You can set it to Lax for testing
         expires: new Date(Date.now() + 900000), // Example: expires in 15 minutes
     });
+    console.log(token);
+    
 
 	res.json({ message: "Logged in successfully" });
 });
