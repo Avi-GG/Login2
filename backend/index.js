@@ -31,6 +31,7 @@ app.post("/Signup", async (req, res) => {
 app.post("/login", async (req, res) => {
 	const { username, password } = req.body;
 	const foundUser = await user.findOne({ username });
+    console.log("Login attempt for username:", foundUser);
 	if (!foundUser) {
 		return res.status(400).json({ error: "User not found" });
 	}
