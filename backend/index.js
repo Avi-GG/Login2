@@ -18,9 +18,9 @@ app.use(express.json());
 app.use(cookieParser());
 
 
-// app.get("*", (req, res) => {
-// 	res.redirect("https://login2-flax.vercel.app"); 
-// })
+app.get("*", (req, res) => {
+	res.redirect("https://login2-flax.vercel.app"); 
+})
 
 app.post("/Signup", async (req, res) => {
 	const { username, password } = req.body;
@@ -50,7 +50,7 @@ app.post("/login", async (req, res) => {
 
 	res.cookie("token", token, {
         path: "/", // Allow access from any path
-    	domain: "login2-flax.vercel.app", // Replace with your actual domain 
+    	// domain: "login2-flax.vercel.app", // Replace with your actual domain 
         secure: true, // Temporarily set to false for testing
         sameSite: "None", // You can set it to Lax for testing
 		expires: new Date(Date.now() + 3600000), // Example: expires in 15 minutes (900000 milliseconds)
