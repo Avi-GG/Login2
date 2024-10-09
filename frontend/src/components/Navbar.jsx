@@ -16,9 +16,12 @@ const Navbar = () => {
 		if (token) {
 			setIsAuthenticated(true);
 			setButtonText("Logout");
-
+			console.log(token);
+			
 			// Decode the token to get the username
 			const decoded = jwtDecode(token);
+			console.log(decoded);
+			
 			setUsername(decoded.username); // Set the username from the token because it will rerender the component to make it visible
 		}
 	}, []);
