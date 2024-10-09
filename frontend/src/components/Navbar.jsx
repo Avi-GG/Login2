@@ -25,7 +25,7 @@ const Navbar = () => {
 			
 			setUsername(decoded.username); // Set the username from the token because it will rerender the component to make it visible
 		}
-	}, []);
+	});
 
 	const handleLogout = async () => {
 		try {
