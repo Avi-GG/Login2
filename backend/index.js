@@ -43,7 +43,8 @@ app.post("/login", async (req, res) => {
 	const token = jwt.sign({ username: foundUser.username }, "secretKey");
 
 	res.cookie("token", token, {
-         // Temporarily set to false for testing
+        path: "/", // Allow access from any path
+    	domain: "yourdomain.com", // Replace with your actual domain 
         secure: true, // Temporarily set to false for testing
         sameSite: "None", // You can set it to Lax for testing
        
