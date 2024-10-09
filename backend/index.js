@@ -53,7 +53,7 @@ app.post("/login", async (req, res) => {
     	domain: "login2-flax.vercel.app", // Replace with your actual domain 
         secure: true, // Temporarily set to false for testing
         sameSite: "None", // You can set it to Lax for testing
-       
+		expires: new Date(Date.now() + 3600000), // Example: expires in 15 minutes (900000 milliseconds)
     });
     console.log(token);
     
