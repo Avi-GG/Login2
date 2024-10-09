@@ -16,6 +16,11 @@ app.use(
 app.use(express.json());
 app.use(cookieParser());
 
+
+app.get("*", (req, res) => {
+	res.sendFile(__dirname + "/build/index.html");
+})
+
 app.post("/Signup", async (req, res) => {
 	const { username, password } = req.body;
 	const existingUser = await user.findOne({ username });
