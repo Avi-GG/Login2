@@ -62,7 +62,7 @@ const Login = () => {
             <p className='text-gray-400  mb-5'>wellcome back you&apos;ve been missed!</p>
 
 						<form className="w-32 " onSubmit={handleSubmit(onSubmit)}>
-							<label htmlFor="name" className=""></label>
+							<label htmlFor="username" className=""></label>
 							<input
 								className="w-60   px-5 py-3 rounded-lg mt-6 mb-1 shadow-3xl shadow-blue-200 focus focus:outline-offset-[3px] outline-blue-300 "
 								type="text"

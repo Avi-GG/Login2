@@ -42,12 +42,7 @@ app.post("/login", async (req, res) => {
 	}
 	const token = jwt.sign({ username: foundUser.username }, "secretKey");
 
-	res.cookie("token", token, {
-        httpOnly: true, // Temporarily set to false for testing
-        secure: true, // Temporarily set to false for testing
-        sameSite: "None", // You can set it to Lax for testing
-        expires: new Date(Date.now() + 900000), // Example: expires in 15 minutes
-    });
+	res.cookie("token", token);
     console.log(token);
     
 
