@@ -4,7 +4,7 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const user = require("./models/user");
 const cookieParser = require("cookie-parser");
-const path = require("path");
+
 // require('dotenv').config();
 
 const app = express();
@@ -16,10 +16,10 @@ app.use(
 );
 app.use(express.json());
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, "../frontend/dist")));
+
 
 app.get("*", (req, res) => {
-	res.sendFile(__dirname + "../frontend/dist/index.html");
+	res.redirect("https://login2-flax.vercel.app"); 
 })
 
 app.post("/Signup", async (req, res) => {
