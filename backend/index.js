@@ -45,7 +45,7 @@ app.post("/login", async (req, res) => {
 	res.cookie("token", token, {
          // Temporarily set to false for testing
          // Temporarily set to false for testing
-        sameSite: "Lax", // You can set it to Lax for testing
+         // You can set it to Lax for testing
        
     });
     console.log(token);
