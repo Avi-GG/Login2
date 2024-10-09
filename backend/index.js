@@ -18,9 +18,9 @@ app.use(express.json());
 app.use(cookieParser());
 
 
-app.get("*", (req, res) => {
-	res.redirect("https://login2-flax.vercel.app"); 
-})
+// app.get("*", (req, res) => {
+// 	res.redirect("https://login2-flax.vercel.app"); 
+// })
 
 app.post("/Signup", async (req, res) => {
 	const { username, password } = req.body;
