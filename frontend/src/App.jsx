@@ -4,6 +4,7 @@ import Navbar from './components/Navbar'
 import Error from './components/Error'
 import Login from './components/Login'
 import Signup from './components/Signup'
+import { ToastContainer } from 'react-toastify'
 
 const App = () => {
 	const router = createBrowserRouter([
@@ -26,6 +27,7 @@ const App = () => {
   return (
 	<div>
 		<RouterProvider router={router}/>
+		<ToastContainer/>
 	</div>
   )
 }
