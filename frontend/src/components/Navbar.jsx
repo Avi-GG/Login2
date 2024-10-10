@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
 import { jwtDecode } from "jwt-decode";
+import { toast } from "react-toastify";
 
 const Navbar = () => {
 	const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -50,6 +51,7 @@ const Navbar = () => {
 				setButtonText("Login");
 				setUsername("Guest");
 				Cookies.remove('token');
+				toast.success("Logged out successfully"); // Show a success toast message after logout
 				navigate("/"); // Redirect to the home page or login page
 			} else {
 				// Handle logout errors

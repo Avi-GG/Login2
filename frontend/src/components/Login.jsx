@@ -11,6 +11,7 @@ const Login = () => {
     const { register, handleSubmit, setError, formState: { errors, isSubmitting } } = useForm();
 
     const onSubmit = async ( data) => {
+        const loadingtoast = toast.loading("Logging in...")
         // e.preventDefault();
         // Add your API call here to send the form data to the server
           // Prepare the data to be sent
@@ -51,6 +52,9 @@ const Login = () => {
           } catch (error) {
               console.error('Error:', error); // Handle any errors
               toast.error("Login failed!")
+          }
+          finally{
+            toast.dismiss(loadingtoast);
           }
       };
 
@@ -112,7 +116,7 @@ const Login = () => {
 								Log In
 							</button>
 						</form>
-                        {isSubmitting && toast.pending("Logging in!")}
+                        
                         <div className="text-[0.7rem] text-gray-500 flex items-center my-10"> <div className="bg-white h-[1px] m-3 rounded-lg w-2/12"> </div><p> Or continue with</p><div className="bg-white h-[1px] m-3 rounded-lg w-2/12"> </div></div>
 					</div>
 
