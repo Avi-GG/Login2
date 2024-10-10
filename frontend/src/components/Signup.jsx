@@ -40,11 +40,12 @@ const Signup = () => {
 			if (response.status === 400) {
 				setError("username", { type: "manual", message: result.message });
 			} else {
-				// Redirect to home page after successful signup
+				toast.success("Signup successful!")// Redirect to home page after successful signup
 				navigate("/"); // Redirect to '/' after success
 			}
 		} catch (error) {
 			console.log(response);
+			toast.error("Signup failed!")
 			console.error("Error:", error); // Handle any errors
 		}
 	};
@@ -143,6 +144,7 @@ const Signup = () => {
 								Sign In
 							</button>
 						</form>
+						{isSubmitting && toast.pending("Logging in!")}
 						<div className="text-[0.7rem] text-gray-500 flex items-center my-10">
 							{" "}
 							<div className="bg-white h-[1px] m-3 rounded-lg w-2/12"> </div>

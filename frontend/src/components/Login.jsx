@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import Cookies from 'js-cookie'
+import {toast} from 'react-toastify';
 
 const Login = () => {
     const [username, setUsername] = useState('');
@@ -44,10 +45,12 @@ const Login = () => {
                     sameSite: 'None',     // Required for cross-origin requests
                     expires: 1,
                 }); // Redirect to home page after successful signup
+                toast.success("Login successful!")
                 navigate('/');  // Redirect to '/' after success
             }
           } catch (error) {
               console.error('Error:', error); // Handle any errors
+              toast.error("Login failed!")
           }
       };
 
@@ -109,6 +112,7 @@ const Login = () => {
 								Log In
 							</button>
 						</form>
+                        {isSubmitting && toast.pending("Logging in!")}
                         <div className="text-[0.7rem] text-gray-500 flex items-center my-10"> <div className="bg-white h-[1px] m-3 rounded-lg w-2/12"> </div><p> Or continue with</p><div className="bg-white h-[1px] m-3 rounded-lg w-2/12"> </div></div>
 					</div>
 
