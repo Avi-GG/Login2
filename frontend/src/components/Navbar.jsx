@@ -49,6 +49,7 @@ const Navbar = () => {
 				setIsAuthenticated(false);
 				setButtonText("Login");
 				setUsername("Guest");
+				Cookies.remove('token');
 				navigate("/"); // Redirect to the home page or login page
 			} else {
 				// Handle logout errors
