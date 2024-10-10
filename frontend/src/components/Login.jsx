@@ -11,7 +11,7 @@ const Login = () => {
     const { register, handleSubmit, setError, formState: { errors, isSubmitting } } = useForm();
 
     const onSubmit = async ( data) => {
-        const loadingtoast = toast.loading("Logging in...")
+        const loadingToast = toast.loading("Logging in...")
         // e.preventDefault();
         // Add your API call here to send the form data to the server
           // Prepare the data to be sent
@@ -54,7 +54,7 @@ const Login = () => {
               toast.error("Login failed!")
           }
           finally{
-            toast.dismiss(loadingtoast);
+            toast.dismiss(loadingToast);
           }
       };
 

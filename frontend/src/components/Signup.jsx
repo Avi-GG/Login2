@@ -14,6 +14,7 @@ const Signup = () => {
 	} = useForm();
 
 	const onSubmit = async (data) => {
+		const loadingToast = toast.loading("Signing up...");
 		// e.preventDefault(); //it is by default in react-hook-form
 
 		// Add your API call here to send the form data to the server
@@ -47,6 +48,9 @@ const Signup = () => {
 			console.log(response);
 			toast.error("Signup failed!")
 			console.error("Error:", error); // Handle any errors
+		}
+		finally{
+			toast.dismiss(loadingToast); // Dismiss the loading toast when the request is finished
 		}
 	};
 
@@ -144,7 +148,7 @@ const Signup = () => {
 								Sign In
 							</button>
 						</form>
-						{isSubmitting && toast.pending("Logging in!")}
+						
 						<div className="text-[0.7rem] text-gray-500 flex items-center my-10">
 							{" "}
 							<div className="bg-white h-[1px] m-3 rounded-lg w-2/12"> </div>
