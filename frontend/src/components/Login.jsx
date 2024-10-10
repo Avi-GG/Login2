@@ -38,7 +38,12 @@ const Login = () => {
                 }
             }
             else{
-                Cookies.set('token', result.token); // Redirect to home page after successful signup
+                Cookies.set('token', result.token, {
+                    path: '/',            // Make the cookie available on all routes
+                    secure: true,         // Ensure the cookie is only sent over HTTPS
+                    sameSite: 'None',     // Required for cross-origin requests
+                    expires: 1,
+                }); // Redirect to home page after successful signup
                 navigate('/');  // Redirect to '/' after success
             }
           } catch (error) {
